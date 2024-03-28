@@ -22,7 +22,7 @@
 
 	if(component_type == /datum/component/riding)
 		stack_trace("Tried attaching a ridable element to [target] with basic/abstract /datum/component/riding component type. Please designate a specific riding component subtype when adding the ridable element.")
-		return COMPONENT_INCOMPATIBLE
+		return COMPONENT_INCOMPATIBLEridd
 
 	target.can_buckle = TRUE
 	riding_component_type = component_type
@@ -35,9 +35,9 @@
 		RegisterSignal(target, COMSIG_MOB_STATCHANGE, PROC_REF(on_stat_change))
 
 /datum/element/ridable/Detach(atom/movable/target)
-	target.can_buckle = initial(target.can_buckle)
-	UnregisterSignal(target, list(COMSIG_MOVABLE_PREBUCKLE, COMSIG_SPEED_POTION_APPLIED, COMSIG_MOB_STATCHANGE))
-	return ..()
+	//target.can_buckle = initial(target.can_buckle)
+	//UnregisterSignal(target, list(COMSIG_MOVABLE_PREBUCKLE, COMSIG_SPEED_POTION_APPLIED, COMSIG_MOB_STATCHANGE))
+	//return ..()
 
 /// Someone is buckling to this movable, which is literally the only thing we care about (other than speed potions)
 /datum/element/ridable/proc/check_mounting(atom/movable/target_movable, mob/living/potential_rider, force = FALSE, ride_check_flags = NONE)

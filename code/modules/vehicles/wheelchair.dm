@@ -49,8 +49,8 @@
 	update_appearance()
 
 /obj/vehicle/ridden/wheelchair/post_unbuckle_mob()
-	. = ..()
-	update_appearance()
+	//. = ..()
+	//update_appearance()
 
 /obj/vehicle/ridden/wheelchair/wrench_act(mob/living/user, obj/item/tool) //Attackby should stop it attacking the wheelchair after moving away during decon
 	..()

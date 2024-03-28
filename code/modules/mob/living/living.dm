@@ -1183,7 +1183,7 @@
 		return FALSE
 
 /mob/living/proc/resist_buckle()
-	buckled.user_unbuckle_mob(src,src)
+	//buckled.user_unbuckle_mob(src,src)
 
 /mob/living/proc/resist_fire()
 	return FALSE
@@ -2223,12 +2223,12 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 				ADD_TRAIT(src, TRAIT_FLOORED, BUCKLED_TRAIT)
 				set_body_position(LYING_DOWN)
 				set_lying_angle(buckled.buckle_lying)
-	else
-		remove_traits(list(TRAIT_IMMOBILIZED, TRAIT_FLOORED), BUCKLED_TRAIT)
-		if(.) // We unbuckled from something.
-			var/atom/movable/old_buckled = .
-			if(old_buckled.buckle_lying == 0 && (resting || HAS_TRAIT(src, TRAIT_FLOORED))) // The buckle forced us to stay up (like a chair)
-				set_lying_down() // We want to rest or are otherwise floored, so let's drop on the ground.
+	//else
+		//remove_traits(list(TRAIT_IMMOBILIZED, TRAIT_FLOORED), BUCKLED_TRAIT)
+		//if(.) // We unbuckled from something.
+		//	var/atom/movable/old_buckled = .
+		//	if(old_buckled.buckle_lying == 0 && (resting || HAS_TRAIT(src, TRAIT_FLOORED))) // The buckle forced us to stay up (like a chair)
+		//		set_lying_down() // We want to rest or are otherwise floored, so let's drop on the ground.
 
 /mob/living/set_pulledby(new_pulledby)
 	. = ..()
